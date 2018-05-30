@@ -1,42 +1,73 @@
-\documentclass[a4paper]{article}
-%\advance\day by 1
-%% Language and font encodings
-\usepackage[english]{babel}
-\usepackage[utf8x]{inputenc}
-\usepackage[T1]{fontenc}
+\documentclass[9pt,twocolumn,twoside]{rilabRxiv}
+% Use the documentclass option 'lineno' to view line numbers
+\setlength{\marginparwidth}{2cm}
+\usepackage[textsize=tiny,colorinlistoftodos]{todonotes} % comments in margins
+\definecolor{cornflowerblue}{rgb}{0.39, 0.58, 0.93}
+\usepackage{blindtext}
 
-%% Sets page size and margins
-\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-%\usepackage[papersize={8.5in,11in}]{geometry}
+%%%%%%%Add comments in color
+\newcommand{\ms}[1]{{\small \textcolor{green}{#1}}}
+\newcommand{\jri}[1]{{\small \textcolor{red}{#1}}}
+\newcommand{\citex}[1]{{\small \textcolor{red}{CITE(#1)}}}
+\newcommand{\X}{{\textcolor{red}{X}}}
 
-%% Useful packages
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage[colorinlistoftodos]{todonotes}
-\usepackage[colorlinks=true, allcolors=black]{hyperref}
-\usepackage{natbib}
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
 
-\usepackage{subcaption}
-
-\usepackage{lineno}
-\linenumbers
-
-\newcommand{\mcs}[1]{\todo[size=\tiny, color=magenta!20]{#1}}
-\newcommand{\jri}[1]{\todo[size=\tiny, color=green!20]{#1}}
-\newcommand{\X}{\textcolor{red}{\bf X\,}}
-\newcommand{\cx}{cite(\textcolor{red}{\bf X\,})}
+% Set supplement numbers to S and start counting newly
+\newcommand{\beginsupplement}{%
+        \setcounter{table}{0}
+        \renewcommand{\thetable}{S\arabic{table}}%
+        \setcounter{figure}{0}
+        \renewcommand{\thefigure}{S\arabic{figure}}%
+     }
 
 
+\usepackage{hyperref}
 
-\linespread{1.25} %% this is, confusingly, 1.5 line spacing
 \title{Maize domestication and gene interaction}
-\author{Michelle C Stitzer$^{1,2}$ and Jeffrey Ross-Ibarra$^{1,2,3}$}
-\date{\small$^1$Department of Plant Sciences, University of California, Davis\\
-$^2$Center for Population Biology, University of California, Davis\\
-$^3$Genome Center, University of California, Davis\\
-\today\\
-mcstitzer@ucdavis.edu\\
-Word Count: 8408}
+
+\author[$\ast$,1]{Michelle C Stitzer}
+\author[$\ast,\dagger$]{Jeffrey Ross-Ibarra}
+%\author[$\ast$,$\ddagger$,1]{Third Author}
+
+
+\affil[$\ast$]{Dept. of Plant Sciences and Center for Population Biology, University of California, Davis, CA, USA}
+\affil[$\dagger$]{Genome Center, University of California, Davis, CA, USA}
+
+
+
+
+\keywords{Keyword one, keyword 2}
+
+\runningtitle{Maize domestication and gene interaction} % For use in the footer
+
+%% For the footnote.
+%% Give the last name of the first author if only one author;
+% \runningauthor{FirstAuthorLastname}
+%% last names of both authors if there are two authors;
+% \runningauthor{FirstAuthorLastname and SecondAuthorLastname}
+%% last name of the first author followed by et al, if more than two authors.
+\runningauthor{Stitzer \textit{et al.}}
+
+
+%%% Abstract %%%%%%%%%%%%%%%%%%
+\begin{abstract}
+  Domestication is a tractable system for following evolutionary change.
+  Under domestication, wild populations respond to shifting selective pressures, resulting in adaptation to the new ecological niche of cultivation.
+  Due to the important role of domesticated crops in human nutrition and agriculture, the ancestry and selection pressures transforming a wild plant into a domesticate have been extensively studied.
+  In \textit{Zea mays}, morphological, genetic, and genomic studies have elucidated how a wild plant, the teosinte \textit{Zea mays} subsp. \textit{parviglumis}, was transformed into the domesticate \textit{Zea mays} subsp. \textit{mays}.
+  Five major morphological differences distinguish these two subspecies, and careful genetic dissection  has pinpointed the molecular changes responsible for several of these traits.
+  But maize domestication was a consequence of more than just five genes, and regions throughout the genome contribute.
+  The impacts of these additional regions are contingent on genetic background, both the interactions between alleles of a single gene and among alleles of the multiple genes that modulate phenotypes.
+  Key genetic interactions include dominance relationships, epistatic interactions, and pleiotropic constraint, including how these variants are connected in gene networks.
+  Here, we review the role of gene interactions in generating the dramatic phenotypic evolution seen in the transition from teosinte to maize.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\setboolean{displaycopyright}{true}
+
 
 \begin{document}
 \maketitle
@@ -69,7 +100,7 @@ Although the temporal nature of this trajectory and transformation has been thor
 ﻿The initial stages of domestication are largely analogous to a plant encountering a new ecological niche.
 ﻿By growing plants and then planting their seeds in the next generation, selective breeding and seed saving allow for adaptation to agronomic environments.
 ﻿The domestication process may shift selection pressures from biotic interactions such as competition and colonization to traits of value for human consumption, including large non-dispersing seeds, reduced branching, and other nutritional and harvest-related phenotypes \citep{doebley2006}.
-Byproducts of cultivation can also alter biotic interactions, for example by allowing pests to specialize on a domesticate \citep{bernal2018, gaillard2018}, or alter phenotypes less visible to conscious human selection, such as root architecture \citep{burton2013}.
+Byproducts of cultivation can also alter biotic interactions, for ple by allowing pests to specialize on a domesticate \citep{bernal2018, gaillard2018}, or alter phenotypes less visible to conscious human selection, such as root architecture \citep{burton2013}.
 
 ﻿Among modern domesticated plants, maize (\textit{Zea mays} subsp. \textit{mays}) is perhaps the crop most often used as an example of the changes wrought by domestication, as the radical restructuring of the female inflorescence of maize generated a plant reliant on human cultivation for its survival.
 ﻿For example, a productive cob of corn contains hundreds of seeds, but all are constrained to the cob.
