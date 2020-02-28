@@ -63,9 +63,7 @@
 \setlength{\affilsep}{0.1em}
 \renewcommand\Authfont{\color{color0}\normalfont\sffamily\bfseries\fontsize{9}{13}\selectfont}
 \renewcommand\Affilfont{\color{color0}\normalfont\sffamily\fontsize{8}{10}\selectfont}
-\makeatletter
 \renewcommand\AB@affilsepx{, \protect\Affilfont}
-\makeatother
 \renewcommand\Authands{ and }
 
 
@@ -115,13 +113,11 @@
 \captionsetup[table]{position=below} % Reduce spacing below caption
 
 % Algorithm style
-\makeatletter
 \newcommand\fs@coloruled{\def\@fs@cfont{\bfseries}\let\@fs@capt\floatc@coloruled
   \def\@fs@pre{\kern2pt}%
   \def\@fs@post{\kern2pt{\color{color2}\hrule}\relax}%
   \def\@fs@mid{\kern2pt{\color{color2}\hrule}\kern2pt}%
   \let\@fs@iftopcapt\iftrue}
-\makeatother
 
 \floatstyle{coloruled}
 \restylefloat{algorithm}
@@ -143,12 +139,10 @@
 \lfoot{}
 \cfoot{}
 \rfoot{}
-\makeatletter
 \fancyfoot[RO,RE]{\thepage\ \hspace{2em} \@runningauthor \hspace{0.2em}}
 \fancyfoot[RO]{\@runningtitle \hspace{2em} \thepage\ }
 \fancyfoot[LO,LE]{\includegraphics[width=0.5cm]{cornkey.png}}
 
-\makeatother
 %\fancyfoot[LO,RE]{}
 \renewcommand{\headrulewidth}{0pt}% % No header rule
 \renewcommand{\footrulewidth}{0pt}% % No footer rule
